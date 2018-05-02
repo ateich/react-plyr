@@ -37,6 +37,7 @@ class Plyr extends Component {
     },
     duration: null,
     displayDuration: true,
+    listeners: {},
     storage: {
       enabled: true,
       key: 'plyr_volume'
@@ -90,6 +91,24 @@ class Plyr extends Component {
     }),
     duration: PropTypes.number,
     displayDuration: PropTypes.bool,
+    listeners: PropTypes.shape({
+      seek: PropTypes.func,
+      play: PropTypes.func,
+      pause: PropTypes.func,
+      restart: PropTypes.func,
+      rewind: PropTypes.func,
+      fastForward: PropTypes.func,
+      mute: PropTypes.func,
+      volume: PropTypes.func,
+      captions: PropTypes.func,
+      fullscreen: PropTypes.func,
+      pip: PropTypes.func,
+      airplay: PropTypes.func,
+      speed: PropTypes.func,
+      quality: PropTypes.func,
+      loop: PropTypes.func,
+      language: PropTypes.func
+    }),
     storage: PropTypes.shape({
       enabled: PropTypes.bool,
       key: PropTypes.string
@@ -128,6 +147,7 @@ class Plyr extends Component {
       tooltips: this.props.tooltips,
       duration: this.props.duration,
       displayDuration: this.props.displayDuration,
+      listeners: this.props.listeners,
       storage: this.props.storage
     };
 
